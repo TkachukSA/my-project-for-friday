@@ -10,7 +10,7 @@ import SuperDoubleRange from "../common/c8-SuperDoubleRange/SuperDoubleRange";
 
 
 function PreJunior() {
-    let arr = ['1','2','3']
+    let arr = ['1', '2', '3']
     const [checked, setChecked] = useState(false)
     const [EditableSpan, setEditableSpan] = useState('false')
     const [value, setvalue] = useState(arr[0])
@@ -22,13 +22,14 @@ function PreJunior() {
             <div><SuperInputText/></div>
             <div><SuperButton onClick={() => alert('hi')}>delite</SuperButton></div>
             <div><SuperCheckbox checked={checked} onChangeChecked={setChecked}>{'sdcsdd'}</SuperCheckbox></div>
-            <div><SuperEditableSpan value={EditableSpan} onChangeText={setEditableSpan} spanProps={{children: checked ? undefined : "enter text..."}} /></div>
-            <div><SuperSelect options={arr} value={value}onChangeOption={setvalue} /></div>
+            <div><SuperEditableSpan value={EditableSpan} onChangeText={setEditableSpan}
+                                    spanProps={{children: checked ? undefined : "enter text..."}}/></div>
+            <div><SuperSelect options={arr} value={value} onChangeOption={setvalue}/></div>
             <div><SuperRadio name={"radio"}
                              options={arr}
                              value={value}
                              onChangeOption={setvalue}
-                             onChange={(e)=>setvalue(e.currentTarget.value)}/></div>
+                             onChange={(e) => setvalue(e.currentTarget.value)}/></div>
             <div><SuperRange value={value1}
                              onChangeRange={setValue1}/></div>
             <div><SuperDoubleRange value={[value1, value2]}/></div>
