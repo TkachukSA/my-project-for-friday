@@ -2,13 +2,13 @@ import React from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import './App.css';
 import {Login} from "./auth/login/Login";
-import {RecoveryPassword} from "./auth/recovery-password /RecoveryPassword";
-import {NewPassword} from "./auth/recovery-password /NewPassword";
 import {Registration} from "./auth/registration/Registration";
 import PreJunior from "./pages/PreJunior";
 import {Error404} from "./pages/Error404";
 import {Profile} from "./profile/Profile";
 import Header, {PATH} from "./header/Header";
+import {RecoveryPassword} from "./auth/recovery-password/RecoveryPassword";
+import {NewPassword} from "./auth/recovery-password/NewPassword";
 
 
 function App() {
