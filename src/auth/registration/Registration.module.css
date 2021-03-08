@@ -9,3 +9,6 @@ flex-direction: column;
     height: 20px;
     width: 60px;
 }
+.input{
+    margin-bottom: 5px;
+}
