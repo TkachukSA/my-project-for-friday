@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+
 const instance = axios.create({
-    baseURL: 'https://',
+    baseURL: 'http://localhost:7542/2.0/',
     withCredentials: true,
 })
 
@@ -15,5 +16,18 @@ export const authAPI = {
     },
     logout() {
 
+    },
+    registration(data: dataNewUserType) {
+        return instance.post<ResponseRegistrationType>('/auth/register', data)
     }
+}
+type ResponseRegistrationType = {
+    addedUser: {},
+    error?: string,
+}
+
+
+export type dataNewUserType = {
+    email: string,
+    password: string
 }

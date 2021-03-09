@@ -1,0 +1,15 @@
+.wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    size: auto;
+}
+
+.input {
+    margin-bottom: 5px;
+}
