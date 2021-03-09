@@ -5,7 +5,7 @@ import style from './Header.module.css'
 export const PATH = {
     loginPage: "/login",
     RecoveryPasswordPage: "/recoverypassword",
-    NewPasswordPage: "/newpassword",
+    NewPasswordPage: "/newpassword/:token?",
     RegistrationPage: "/registration",
     PreJuniorPage: "/prejunior",
     ErrorPage: "/404",
