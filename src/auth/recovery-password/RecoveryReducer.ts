@@ -5,7 +5,7 @@ import {recoveryAPI} from "../../api/recoveryApi";
 export type isDoneType = 'true' | 'false' | 'inProgress'
 const initialState = {
     isDone: 'false' as isDoneType,
-    recoveryStatus: '',
+    messangeRecInfo: '',
     error: ''
 }
 
@@ -17,14 +17,12 @@ export const RecoveryReducer = (state: InitialStateType = initialState, action: 
             return {...state, isDone: action.value}
         }
         case "RECOVERY_INFO": {
-            return {...state, recoveryStatus: action.value}
+            return {...state, messangeRecInfo: action.value}
         }
         case "SET-ERROR": {
             return {...state, error: action.error}
         }
-        case "CHANGE_PASSWORD": {
-            return {...state, isDone: "true"}
-        }
+
         default:
             return state
     }
@@ -34,7 +32,8 @@ export const RecoveryReducer = (state: InitialStateType = initialState, action: 
 export const statusCompletedAC = (value: isDoneType) => ({type: 'STATUS_COMPLETED', value} as const)
 export const recoveryStatusAC = (value: string) => ({type: 'RECOVERY_INFO', value} as const)
 export const setAppErrorAC = (error: string) => ({type: 'SET-ERROR', error} as const)
-export const newPasswordAC = (password: string, token: string | undefined) => ({type: 'CHANGE_PASSWORD', password, token} as const)
+// пароль измен
+    //export const newPasswordAC = (password: string, token: string | undefined) => ({type: 'CHANGE_PASSWORD', password, token} as const)
 
 // thunks
 export const forgotTC = (email: string) => (dispatch: Dispatch<ActionsType>) => {
@@ -64,7 +63,8 @@ export const newPasswordTC = (password: string, token: string) => (dispatch: Dis
     recoveryAPI.resetPassword(password, token)
         .then((res) => {
             if (res.status === 200) {
-                dispatch(newPasswordAC(password, token))
+                /*dispatch(newPasswordAC(password, token))*/
+                dispatch(statusCompletedAC("true"))
                 dispatch(recoveryStatusAC(res.data.info))
 
             } else {
@@ -91,4 +91,4 @@ type ActionsType =
     | ReturnType<typeof statusCompletedAC>
     | ReturnType<typeof recoveryStatusAC>
     | ReturnType<typeof setAppErrorAC>
-    | ReturnType<typeof newPasswordAC>
+
