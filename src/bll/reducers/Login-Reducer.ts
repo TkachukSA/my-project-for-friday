@@ -53,8 +53,10 @@ export const logOutTC = () => async (dispatch: Dispatch) => {
     dispatch(setApiStatusAC('loading'))
     try {
         let res = await authAPI.logout()
-        if (res.status === 200)
+        if (res.status === 200){
             dispatch(logInAC(false))
+            dispatch(setApiStatusAC('succeeded'))
+        }
         else {
             dispatch(setErrorAC('Unknown Error'))
             dispatch(setApiStatusAC('failed'))
