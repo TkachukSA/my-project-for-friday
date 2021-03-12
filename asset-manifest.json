@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/my-project-for-friday/static/css/main.7d29e6ed.chunk.css",
-    "main.js": "/my-project-for-friday/static/js/main.31c19129.chunk.js",
-    "main.js.map": "/my-project-for-friday/static/js/main.31c19129.chunk.js.map",
-    "runtime-main.js": "/my-project-for-friday/static/js/runtime-main.7d01e0f5.js",
-    "runtime-main.js.map": "/my-project-for-friday/static/js/runtime-main.7d01e0f5.js.map",
-    "static/js/2.174f0711.chunk.js": "/my-project-for-friday/static/js/2.174f0711.chunk.js",
-    "static/js/2.174f0711.chunk.js.map": "/my-project-for-friday/static/js/2.174f0711.chunk.js.map",
-    "static/js/3.0a0a6595.chunk.js": "/my-project-for-friday/static/js/3.0a0a6595.chunk.js",
-    "static/js/3.0a0a6595.chunk.js.map": "/my-project-for-friday/static/js/3.0a0a6595.chunk.js.map",
+    "main.css": "/my-project-for-friday/static/css/main.8b2a9d8a.chunk.css",
+    "main.js": "/my-project-for-friday/static/js/main.1d4a9d4f.chunk.js",
+    "main.js.map": "/my-project-for-friday/static/js/main.1d4a9d4f.chunk.js.map",
+    "runtime-main.js": "/my-project-for-friday/static/js/runtime-main.07e29101.js",
+    "runtime-main.js.map": "/my-project-for-friday/static/js/runtime-main.07e29101.js.map",
+    "static/js/2.234c15f1.chunk.js": "/my-project-for-friday/static/js/2.234c15f1.chunk.js",
+    "static/js/2.234c15f1.chunk.js.map": "/my-project-for-friday/static/js/2.234c15f1.chunk.js.map",
+    "static/js/3.b8452c6e.chunk.js": "/my-project-for-friday/static/js/3.b8452c6e.chunk.js",
+    "static/js/3.b8452c6e.chunk.js.map": "/my-project-for-friday/static/js/3.b8452c6e.chunk.js.map",
     "index.html": "/my-project-for-friday/index.html",
-    "static/css/main.7d29e6ed.chunk.css.map": "/my-project-for-friday/static/css/main.7d29e6ed.chunk.css.map",
-    "static/js/2.174f0711.chunk.js.LICENSE.txt": "/my-project-for-friday/static/js/2.174f0711.chunk.js.LICENSE.txt"
+    "static/css/main.8b2a9d8a.chunk.css.map": "/my-project-for-friday/static/css/main.8b2a9d8a.chunk.css.map",
+    "static/js/2.234c15f1.chunk.js.LICENSE.txt": "/my-project-for-friday/static/js/2.234c15f1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d01e0f5.js",
-    "static/js/2.174f0711.chunk.js",
-    "static/css/main.7d29e6ed.chunk.css",
-    "static/js/main.31c19129.chunk.js"
+    "static/js/runtime-main.07e29101.js",
+    "static/js/2.234c15f1.chunk.js",
+    "static/css/main.8b2a9d8a.chunk.css",
+    "static/js/main.1d4a9d4f.chunk.js"
   ]
 }
