@@ -13,15 +13,11 @@ type FormikErrorType = {
 
 export const NewPassword = () => {
 
-    // обработка ошибок (показывается если что-то пошло не так)
     const error = useSelector<AppStoreType, string>(state => state.recovery.error)
-    // смотри описание в RecoveryPassword.tsx
     const isDone = useSelector<AppStoreType, isDoneType>(state => state.recovery.isDone)
-    // показывает 'loading' перед отправкой на сервер, и выдает инфу об статусе запроса с сервера
     const recoveryStatus = useSelector<AppStoreType, string>(state => state.recovery.messangeRecInfo)
 
     const dispatch = useDispatch()
-    // хук достающий из урла токен. добавляется к урлу после перехода по ссылке на эл. почте
     const {token} = useParams<Record<string, string | undefined>>();
     const tokenValue = token ? token : ''
 

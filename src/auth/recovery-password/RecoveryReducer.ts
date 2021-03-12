@@ -32,8 +32,6 @@ export const RecoveryReducer = (state: InitialStateType = initialState, action: 
 export const statusCompletedAC = (value: isDoneType) => ({type: 'STATUS_COMPLETED', value} as const)
 export const recoveryStatusAC = (value: string) => ({type: 'RECOVERY_INFO', value} as const)
 export const setAppErrorAC = (error: string) => ({type: 'SET-ERROR', error} as const)
-// пароль измен
-    //export const newPasswordAC = (password: string, token: string | undefined) => ({type: 'CHANGE_PASSWORD', password, token} as const)
 
 // thunks
 export const forgotTC = (email: string) => (dispatch: Dispatch<ActionsType>) => {

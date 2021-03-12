@@ -9,16 +9,8 @@ import {useFormik} from "formik";
 
 export const RecoveryPassword = () => {
 
-    // isDone - статус восстоновления пароля
-    // изначально - 'false' (при переходе на страницу recovertPassword)
-    // статус меняйется на - 'inProgress' если пользователь ввел верный email и пришел положительный ответ от сервера
-    // статус меняйется на - 'true'  когда ввели новый пароль и есть актуальный токен
     const isDone = useSelector<AppStoreType, isDoneType>(state => state.recovery.isDone)
-
-    // показывает 'loading' перед отправкой на сервер, и выдает инфу об статусе запроса с сервера
     const recoveryStatus = useSelector<AppStoreType, string>(state => state.recovery.messangeRecInfo)
-
-    // обработка ошибок (показывается если что-то пошло не так)
     const error = useSelector<AppStoreType, string>(state => state.recovery.error)
     const dispatch = useDispatch()
 
