@@ -26,7 +26,6 @@ function App() {
                 <Route path={PATH.ErrorPage} render={() => <Error404/>}/>
                 <Redirect from={PATH.Redirect} to={'/404'}/>
             </Switch>
-            <div>A</div>
         </div>
     );
 }

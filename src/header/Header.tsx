@@ -27,6 +27,7 @@ function Header() {
                         <li><NavLink to={PATH.NewPasswordPage}>New Password</NavLink></li>
                         <li><NavLink to={PATH.RegistrationPage}>Registration</NavLink></li>
                         <li><NavLink to={PATH.PreJuniorPage}>PreJunior</NavLink></li>
+                        <li><NavLink to={PATH.Main}>Profile</NavLink></li>
                         <li><NavLink to={PATH.ErrorPage}>Error Page</NavLink></li>
                     </ul>
                 </div>
