@@ -9,6 +9,7 @@ import {Profile} from "./profile/Profile";
 import Header, {PATH} from "./header/Header";
 import {RecoveryPassword} from "./auth/recovery-password/RecoveryPassword";
 import {NewPassword} from "./auth/recovery-password/NewPassword";
+import {Card} from "./pages/Card/ui/Card";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Route path={PATH.RecoveryPasswordPage} render={() => <RecoveryPassword/>}/>
                 <Route path={PATH.NewPasswordPage} render={() => <NewPassword/>}/>
                 <Route path={PATH.RegistrationPage} render={() => <Registration/>}/>
+                <Route path={PATH.Card} render={() => <Card/>}/>
                 <Route path={PATH.PreJuniorPage} render={() => <PreJunior/>}/>
                 <Route exact path={PATH.Main} render={() => <Profile/>}/>
                 <Route path={PATH.ErrorPage} render={() => <Error404/>}/>

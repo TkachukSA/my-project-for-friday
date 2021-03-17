@@ -19,6 +19,7 @@ export const NewPassword = () => {
 
     const dispatch = useDispatch()
     const {token} = useParams<Record<string, string | undefined>>();
+
     const tokenValue = token ? token : ''
 
     const formik = useFormik({

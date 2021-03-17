@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://asa121asa.github.io/my-project-for-friday",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",

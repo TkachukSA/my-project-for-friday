@@ -10,7 +10,8 @@ export const PATH = {
     PreJuniorPage: "/prejunior",
     ErrorPage: "/404",
     Main: "/",
-    Redirect: "*"
+    Redirect: "*",
+    Card: "/cards"
 
     // add paths
 }
@@ -29,6 +30,7 @@ function Header() {
                         <li><NavLink to={PATH.PreJuniorPage}>PreJunior</NavLink></li>
                         <li><NavLink to={PATH.Main}>Profile</NavLink></li>
                         <li><NavLink to={PATH.ErrorPage}>Error Page</NavLink></li>
+                        <li><NavLink to={PATH.Card}>card</NavLink></li>
                     </ul>
                 </div>
             </Switch>
