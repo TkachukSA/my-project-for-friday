@@ -35,20 +35,54 @@ export type CardPacksType ={
     user_name: string
     _id: string
 }
+type ResponcePacksType={
+    cardPacks:CardPacksType[]
+    cardPacksTotalCount: number
+    maxCardsCount: number
+    minCardsCount: number
+    page: number
+    pageCount: number
+    token: string
+    tokenDeathTime: number
+}
 
+export type CardsApiType={
+    answer: string
+    cardsPack_id: string
+    comments: string
+    created: string
+    grade: number
+    more_id: string
+    question:string
+    rating: number
+    shots: number
+    type: string
+    updated: string
+    user_id: string
+    __v: string
+    _id: string
+    answerImg: ""
+    answerVideo: ""
+    questionImg: "some img"
+    questionVideo: ""
+
+}
 export const packsAPI = {
-    getCards(pageCount?: number,packName?: string, min?: number, max?: number) {
+    getCards(cardsPack_id: string | null, page: number, pageCount: number, packName: string='',min?: number, max?: number) {
 
-        return instance.get('cards/pack', {
+        return instance.get('cards/card', {
             params: {
+                cardsPack_id,
+                page,
+                pageCount,
                 packName,
-                max,
                 min,
-                pageCount
+                max
             }
         })
     },
-    getCardPacks(page: number, pageCount: number) {
-        return instance.get(`cards/pack?page=${page}&pageCount=${pageCount}`);
+    getCardPacks(page: number, pageCount: number, packName: string='',min?: number, max?: number) {
+        return instance.get<ResponcePacksType>(`cards/pack?page=${page}&pageCount=${pageCount}&packName=${packName}&min=${min}&max=${max}`);
     }
 }
+//6053873a338d2c15f075ba5e

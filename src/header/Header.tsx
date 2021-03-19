@@ -11,7 +11,8 @@ export const PATH = {
     ErrorPage: "/404",
     Main: "/",
     Redirect: "*",
-    Card: "/cards"
+    Packs: "/packs",
+    Cards: "/cards"
 
     // add paths
 }
@@ -30,7 +31,8 @@ function Header() {
                         <li><NavLink to={PATH.PreJuniorPage}>PreJunior</NavLink></li>
                         <li><NavLink to={PATH.Main}>Profile</NavLink></li>
                         <li><NavLink to={PATH.ErrorPage}>Error Page</NavLink></li>
-                        <li><NavLink to={PATH.Card}>card</NavLink></li>
+                        <li><NavLink to={PATH.Packs}>Packs</NavLink></li>
+                        <li><NavLink to={PATH.Cards}>Cards</NavLink></li>
                     </ul>
                 </div>
             </Switch>
