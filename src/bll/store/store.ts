@@ -7,6 +7,7 @@ import {loginReducer} from "../reducers/Login-Reducer";
 import thunk from "redux-thunk";
 import {appReducer} from "../reducers/appReducer";
 import {packsReducer} from "../../pages/Card/bll/PacksReducer";
+import {cardsReducer} from "../../pages/Card/bll/CardsReducer";
 
 
 const reducers = combineReducers({
@@ -16,7 +17,8 @@ const reducers = combineReducers({
     recovery: RecoveryReducer,
     logIn: loginReducer,
     app:appReducer,
-    packs: packsReducer
+    packs: packsReducer,
+    cards: cardsReducer
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));

@@ -44,7 +44,7 @@ export const logInTC = (data: LoginParamsType) => async (dispatch: Dispatch) => 
 
     } catch (error) {
         console.log(error)
-        dispatch(setErrorAC(error.response.data.error))
+        dispatch(setErrorAC(error? error.response.data.error: 'some error'))
         dispatch(setApiStatusAC('failed'))
     }
 }

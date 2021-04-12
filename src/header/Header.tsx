@@ -12,7 +12,7 @@ export const PATH = {
     Main: "/",
     Redirect: "*",
     Packs: "/packs",
-    Cards: "/cards"
+    Cards: "/cards/"
 
     // add paths
 }

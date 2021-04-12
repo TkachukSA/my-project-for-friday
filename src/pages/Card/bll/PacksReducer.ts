@@ -18,7 +18,6 @@ const initialState = {
     packsTotalCount: 5,
     isLoading: false,
     sort: {} as SortType,
-    card: [] as CardsApiType[]
 }
 
 type InitialStateType = typeof initialState
@@ -43,9 +42,7 @@ export const packsReducer = (state: InitialStateType = initialState, action: Act
         case "LOADING":{
             return {...state, isLoading: action.loading}
         }
-        case "GET_CARDS":{
-            return {...state, card: action.cards}
-        }
+
 
         default:
             return state
@@ -87,15 +84,13 @@ export const getPacksTC = (page: number = 1, pageCount: number = 10, packName?: 
 
 }
 
-export const getCardsTC = (id:string | null, page: number = 1, pageCount: number = 10, packName?: string, min?: number, max?: number) => (dispatch: Dispatch<any>) => {
-   /* dispatch(setCurrentPageAC(page))
-    dispatch(setPageSizeAC(pageCount))*/
+/*export const getCardsTC = (id:string | null, page: number = 1, pageCount: number = 10, packName?: string, min?: number, max?: number) => (dispatch: Dispatch<any>) => {
+
     dispatch(isLoadingAC(true))
 
     packsAPI.getCards(id,page,pageCount,packName,min,max)
         .then((res) => {
-
-            /*dispatch(getCcardPacksCountAC(res.data.cardPacksTotalCount))*/
+debugger
             dispatch(getCardsCC(res.data.cards))
             dispatch(isLoadingAC(false))
         }).catch((err) => {
@@ -108,7 +103,7 @@ export const getCardsTC = (id:string | null, page: number = 1, pageCount: number
         dispatch(isLoadingAC(false))
     })
 
-}
+}*/
 
 
 // types
@@ -119,6 +114,6 @@ type ActionsType =
     | ReturnType<typeof setPageSizeAC>
     | ReturnType<typeof sortPacksAC>
     | ReturnType<typeof isLoadingAC>
-    | ReturnType<typeof getCardsCC>
+    /*| ReturnType<typeof getCardsCC>*/
 
 
