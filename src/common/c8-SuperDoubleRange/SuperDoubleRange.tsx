@@ -26,6 +26,8 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
 
             </Typography>
             <Slider
+                max={30}
+                min={0}
                 value={value}
                 onChange={onChangeCallback}
                 valueLabelDisplay="auto"

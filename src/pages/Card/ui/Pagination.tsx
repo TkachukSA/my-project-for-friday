@@ -88,8 +88,3 @@ export const Paginations: React.FC<PaginationType> = ({
 
     </>
 }
-/*
-{import  l from '../../../common/c1-LoadingBar/Loading.module.css'
-if(isLoading){
-        return <div className={l.loader}>Loading...</div>
-    }}*/
