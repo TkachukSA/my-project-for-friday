@@ -13,6 +13,8 @@ export const authAPI = {
 
     },
     me() {
+        return instance.put('auth/me')
+
 
     },
     logout() {

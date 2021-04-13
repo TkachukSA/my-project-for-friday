@@ -1,6 +1,8 @@
 import {Dispatch} from "redux";
 import {authAPI} from "../../api/LoginApi";
 import {logInAC} from "./Login-Reducer";
+import {getPacksTC} from "../../pages/Card/bll/PacksReducer";
+import {setUserAc} from "./profile-reducer";
 
 type ActionsType =
     | errorStatusAcType
@@ -60,9 +62,8 @@ export const setAppInitializedAC = (initialized: boolean) => {
 }
 type setApiInitializedACType = ReturnType<typeof setAppInitializedAC>
 
-export const initializeTC = () => async (dispatch: Dispatch) => {
+export const initializeTC = () => async (dispatch: Dispatch<any>) => {
     try {
-
         let res = await authAPI.me()
         if (res.data.resultCode === 0) {
             dispatch(logInAC(true))
@@ -70,7 +71,10 @@ export const initializeTC = () => async (dispatch: Dispatch) => {
         } else {
 
         }
+
+        dispatch(setUserAc(res.data))
         dispatch(setAppInitializedAC(true))
+        dispatch(getPacksTC())
     } catch (error) {
 
     }

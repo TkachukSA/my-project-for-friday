@@ -20,12 +20,13 @@ export type UserType = {
 
 
 
-const initialState = {}
-type InitialStateType = typeof initialState
+const initialState = { user: {} as UserType }
+export type InitialStateType = typeof initialState
 
 export const profileReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET_USER": {
+            debugger
             let stateCopy = {...state}
             stateCopy = {...stateCopy, user: action.user}
             return {...stateCopy}
@@ -36,7 +37,7 @@ export const profileReducer = (state: InitialStateType = initialState, action: A
 }
 // actions
 export const AC = () => ({type: '---'} as const)
-export const setUserAc = (user:UserType) => ({type: "SET_USER", user} as const)
+export const setUserAc = (user :UserType) => ({type: "SET_USER", user} as const)
 
 
 // thunks

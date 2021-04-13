@@ -1,28 +1,34 @@
-import React, {useEffect} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../bll/store/store";
-import {CardPacksType} from "../dall/cardsApi";
-import {getPacksTC} from "../bll/PacksReducer";
+import {CardPacksType, packsAPI} from "../dall/cardsApi";
+import {addPackTC, getPacksTC} from "../bll/PacksReducer";
 import s from './Packs.module.css'
 import {Paginations} from "./Pagination";
 import l from '../../../common/c1-LoadingBar/Loading.module.css'
 import {NavLink} from "react-router-dom";
 import {PATH} from "../../../header/Header";
 import {getCardsTC} from "../bll/CardsReducer";
+import {InitialStateType, UserType} from "../../../bll/reducers/profile-reducer";
 
 
 export function Packs() {
     const packs = useSelector<AppStoreType, CardPacksType[]>(state => state.packs.cardPacks)
+
     const isLoading = useSelector<AppStoreType, boolean>(state => state.packs.isLoading)
     const error = useSelector<AppStoreType, string>(state => state.recovery.error)
     const cardPacksTotalCount = useSelector<AppStoreType, number>(state => state.packs.cardPacksTotalCount)
     const pageSize = useSelector<AppStoreType, number>(state => state.packs.pageSize)
     const currentPage = useSelector<AppStoreType, number>(state => state.packs.currentPage)
+    const id = useSelector<AppStoreType>(state => state.profile.user._id)
     const dispatch = useDispatch()
+
+    const [value, setValue] = useState('')
 
 
     useEffect(() => {
-        dispatch(getPacksTC(currentPage, pageSize))
+
+
     }, [])
 
 
@@ -37,9 +43,10 @@ export function Packs() {
         dispatch(getPacksTC(page, pageSize, find))
     }
 
-    /*if (cards.length > 1) {
-        return <Redirect to={PATH.Cards}/>
-    }*/
+
+    const onChangeValue = (e: ChangeEvent<HTMLInputElement>)=>{
+        setValue(e.currentTarget.value)}
+        debugger
     return (
 
         <div className={isLoading ? l.loader : ''}>
@@ -55,6 +62,7 @@ export function Packs() {
                 />
 
 
+                <input value={value} onChange={onChangeValue}/> <button onClick={()=>dispatch(addPackTC(value))}>add</button>
                 <table className={s.table}>
                     <thead>
                     <tr>
@@ -73,11 +81,11 @@ export function Packs() {
                                     if (t.cardsCount > 0) {
                                         dispatch(getCardsTC(t._id))
                                     }
-
-
                                 }}><NavLink to={PATH.Cards + t._id}>{t.cardsCount}</NavLink></td>
                                 <td>{t.updated}</td>
                                 <td>{t.name}</td>
+                                <button disabled={id !==t.user_id}>upd</button>
+                                <button disabled={id !==t.user_id}>delite</button>
 
                             </tr>
                             </tbody>

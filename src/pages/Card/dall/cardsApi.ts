@@ -68,6 +68,11 @@ export const packsAPI = {
     },
     getCardPacks(page: number, pageCount: number, packName: string='',min?: number, max?: number) {
         return instance.get<ResponcePacksType>(`cards/pack?page=${page}&pageCount=${pageCount}&packName=${packName}&min=${min}&max=${max}`);
+    },
+    createPack(title: string) {
+
+        return instance.post(`cards/pack`,{cardsPack: {name: title}});
     }
+
 }
 //6053873a338d2c15f075ba5e

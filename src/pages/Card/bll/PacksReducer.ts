@@ -84,14 +84,13 @@ export const getPacksTC = (page: number = 1, pageCount: number = 10, packName?: 
 
 }
 
-/*export const getCardsTC = (id:string | null, page: number = 1, pageCount: number = 10, packName?: string, min?: number, max?: number) => (dispatch: Dispatch<any>) => {
-
+export const addPackTC = (title: string) => (dispatch: Dispatch<any>) => {
+debugger
     dispatch(isLoadingAC(true))
 
-    packsAPI.getCards(id,page,pageCount,packName,min,max)
+    packsAPI.createPack(title)
         .then((res) => {
-debugger
-            dispatch(getCardsCC(res.data.cards))
+            dispatch(getPacksTC())
             dispatch(isLoadingAC(false))
         }).catch((err) => {
         if (err.response) {
@@ -103,10 +102,9 @@ debugger
         dispatch(isLoadingAC(false))
     })
 
-}*/
+}
 
 
-// types
 type ActionsType =
     | ReturnType<typeof getCardsPacksAC>
     | ReturnType<typeof getCcardPacksCountAC>

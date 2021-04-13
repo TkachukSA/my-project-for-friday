@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import './App.css';
 import {Login} from "./auth/login/Login";
@@ -11,10 +11,15 @@ import {RecoveryPassword} from "./auth/recovery-password/RecoveryPassword";
 import {NewPassword} from "./auth/recovery-password/NewPassword";
 import {Packs} from "./pages/Card/ui/Packs";
 import {Cards} from "./pages/Card/ui/Cards";
+import {initializeTC} from "./bll/reducers/appReducer";
+import {useDispatch} from "react-redux";
 
 
 function App() {
-
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(initializeTC())
+    })
     return (
         <div className="App">
             <Header/>
