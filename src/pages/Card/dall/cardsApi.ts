@@ -72,6 +72,9 @@ export const packsAPI = {
     createPack(title: string) {
 
         return instance.post(`cards/pack`,{cardsPack: {name: title}});
+    },
+    delitePack(id: string) {
+        return instance.delete(`cards/pack?id=${id}`);
     }
 
 }

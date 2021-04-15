@@ -26,7 +26,6 @@ export type InitialStateType = typeof initialState
 export const profileReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET_USER": {
-            debugger
             let stateCopy = {...state}
             stateCopy = {...stateCopy, user: action.user}
             return {...stateCopy}

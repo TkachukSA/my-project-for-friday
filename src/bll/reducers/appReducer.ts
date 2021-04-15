@@ -67,7 +67,7 @@ export const initializeTC = () => async (dispatch: Dispatch<any>) => {
         let res = await authAPI.me()
         if (res.data.resultCode === 0) {
             dispatch(logInAC(true))
-
+            dispatch(getPacksTC())
         } else {
 
         }

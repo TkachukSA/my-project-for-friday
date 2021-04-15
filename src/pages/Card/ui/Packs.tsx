@@ -2,7 +2,7 @@ import React, {ChangeEvent, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../bll/store/store";
 import {CardPacksType, packsAPI} from "../dall/cardsApi";
-import {addPackTC, getPacksTC} from "../bll/PacksReducer";
+import {addPackTC, delitePackTC, getPacksTC} from "../bll/PacksReducer";
 import s from './Packs.module.css'
 import {Paginations} from "./Pagination";
 import l from '../../../common/c1-LoadingBar/Loading.module.css'
@@ -29,7 +29,7 @@ export function Packs() {
     useEffect(() => {
 
 
-    }, [])
+    }, [packs])
 
 
     const findTitle = (page: number, pageSize: number, find: string) => {
@@ -46,7 +46,6 @@ export function Packs() {
 
     const onChangeValue = (e: ChangeEvent<HTMLInputElement>)=>{
         setValue(e.currentTarget.value)}
-        debugger
     return (
 
         <div className={isLoading ? l.loader : ''}>
@@ -85,7 +84,7 @@ export function Packs() {
                                 <td>{t.updated}</td>
                                 <td>{t.name}</td>
                                 <button disabled={id !==t.user_id}>upd</button>
-                                <button disabled={id !==t.user_id}>delite</button>
+                                <button disabled={id !==t.user_id} onClick={()=>dispatch(delitePackTC(t._id))}>delite</button>
 
                             </tr>
                             </tbody>

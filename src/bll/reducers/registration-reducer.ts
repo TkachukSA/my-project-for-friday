@@ -17,7 +17,6 @@ type InitialStateType = typeof initialState
 export const registrationReducer = (state: InitialStateType = initialState, action: ActionsType): RegistrationStateType => {
     switch (action.type) {
         case 'registration/ERROR':
-            debugger
             return {
                 ...state, error: action.error
             }
@@ -43,7 +42,6 @@ export const registrationTC = (data: dataNewUserType) => (dispatch: Dispatch<Act
     authAPI.registration(data)
         .then((res) => {
             if (!res.data.error) {
-                debugger
                 console.log("registration done")
                 dispatch(setRedirectAC(true))
             } else {
@@ -51,7 +49,6 @@ export const registrationTC = (data: dataNewUserType) => (dispatch: Dispatch<Act
             }
         })
         .catch((error) => {
-            debugger
             dispatch(setErrorAC(error.response.data.error))
         })
 }

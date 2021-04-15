@@ -85,10 +85,28 @@ export const getPacksTC = (page: number = 1, pageCount: number = 10, packName?: 
 }
 
 export const addPackTC = (title: string) => (dispatch: Dispatch<any>) => {
-debugger
     dispatch(isLoadingAC(true))
 
     packsAPI.createPack(title)
+        .then((res) => {
+            dispatch(getPacksTC())
+            dispatch(isLoadingAC(false))
+        }).catch((err) => {
+        if (err.response) {
+            dispatch(setAppErrorAC(err.response.data.error))
+        } else {
+            dispatch(setAppErrorAC('dangerous mistake'))
+        }
+    }).finally(()=>{
+        dispatch(isLoadingAC(false))
+    })
+
+}
+
+export const delitePackTC = (id: string) => (dispatch: Dispatch<any>) => {
+    dispatch(isLoadingAC(true))
+
+    packsAPI.delitePack(id)
         .then((res) => {
             dispatch(getPacksTC())
             dispatch(isLoadingAC(false))
